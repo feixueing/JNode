@@ -1,0 +1,22 @@
+{
+  "name": "jnode",
+  "version": "1.0.0",
+  "description": "It is a project created by React.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feixueing/JNode.git"
+  },
+  "author": "lgr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/feixueing/JNode/issues"
+  },
+  "homepage": "https://github.com/feixueing/JNode#readme",
+  "devDependencies": {
+    "webpack": "3.9.1"
+  }
+}
