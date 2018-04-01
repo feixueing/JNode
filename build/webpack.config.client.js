@@ -1,36 +1,17 @@
 const path = require('path')
 const webpack = require('webpack')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
+const webpckMerge = require('webpack-merge')
+const baseConfig = require('./webpack.config.base')
 
 const isDev = process.env.NODE_ENV === 'development'
 
-const config = {
+const config = webpckMerge(baseConfig, {
   entry: {
     app: path.join(__dirname, '../client/app.js')
   },
   output: {
     filename: '[name]-[hash].js',
-    path: path.join(__dirname, '../dist'),
-    publicPath: '/public/'
-  },
-  module: {
-    rules: [
-      {
-        enforce: 'pre',
-        test: /\.(js|jsx)$/,
-        use: ['eslint-loader'],
-        exclude: [
-          path.join(__dirname, '../node_modules')
-        ]
-      },
-      {
-        test: /\.(js|jsx)$/,
-        use: ['babel-loader'],
-        exclude: [
-          path.join(__dirname, '../node_modules')
-        ]
-      }
-    ]
   },
   plugins: [
     new HTMLWebpackPlugin({
@@ -38,7 +19,7 @@ const config = {
       filename: 'index.html'
     }),
   ]
-}
+})
 
 if (isDev) {
   config.entry = {

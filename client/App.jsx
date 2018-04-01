@@ -7,7 +7,7 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div>Hello React 123</div>
+      <div>Hello React</div>
     )
   }
 }
