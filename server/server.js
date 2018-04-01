@@ -17,7 +17,7 @@ if (isDev) {
 
   app.use('/public', express.static(path.join(__dirname, '../dist')))
 
-  app.get('*', (req,res) => {
+  app.get('*', (req, res) => {
     var content = ReactSSR.renderToString(serverEntry)
     var html = template.replace('<!-- app -->', content)
     res.send(html)
